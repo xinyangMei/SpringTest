@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+
+    <Appenders>
+        <priority ></priority>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattorn = "[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n" />
+        </Console>
+
+    </Appenders>
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="Console" />
+        </Root>
+    </Loggers>
+</Configuration>
