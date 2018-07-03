@@ -19,7 +19,7 @@ public class CronTriggerDemo {
     public static void main(String[] args) {
         try {
             Scheduler defaultScheduler = StdSchedulerFactory.getDefaultScheduler();
-
+            defaultScheduler.getListenerManager();
             Trigger cronTrigger = TriggerBuilder.newTrigger()
                     .withIdentity("cronTrigger", "cronTrigger")
                     .startNow()
@@ -31,8 +31,8 @@ public class CronTriggerDemo {
                     .withIdentity("cronJob", "cronGroup")
                     .build();
 
-            defaultScheduler.scheduleJob(jobDetail,cronTrigger );
-
+//            defaultScheduler.scheduleJob(jobDetail,cronTrigger );
+//            defaultScheduler.resumeAll();
             defaultScheduler.start();
         } catch (SchedulerException e) {
             e.printStackTrace();

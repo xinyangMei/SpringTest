@@ -15,7 +15,6 @@ public class UserPojo {
 
     public UserPojo() {
         name = "mxy";
-        System.out.println("--------------->构造userPojo>>>>>>>name: "+name);
     }
 
     public String getName() {

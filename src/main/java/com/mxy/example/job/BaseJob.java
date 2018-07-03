@@ -4,6 +4,7 @@ import com.mxy.example.pojo.SimpleMessagePojo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -34,6 +35,7 @@ public abstract class BaseJob implements CommandLineRunner, Runnable {
 
 
     public BaseJob(int initialDelay, int period, TimeUnit timeUnit) {
+
         this.initialDelay = initialDelay;
         this.period = period;
         this.timeUnit = timeUnit;

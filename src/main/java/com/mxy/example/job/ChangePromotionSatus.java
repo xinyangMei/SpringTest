@@ -1,6 +1,7 @@
 package com.mxy.example.job;
 
 import com.mxy.example.pojo.SimpleMessagePojo;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -13,6 +14,7 @@ import java.util.concurrent.TimeUnit;
  * @description
  */
 @Component
+@ConditionalOnProperty(name = "enableBaseJob" ,havingValue = "true")
 public class ChangePromotionSatus extends BaseJob {
 
     public ChangePromotionSatus() {

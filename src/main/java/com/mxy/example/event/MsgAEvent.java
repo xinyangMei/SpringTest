@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @date 2018/3/12
  * @description
  */
-public class TestEvent extends ApplicationEvent implements Serializable {
+public class MsgAEvent extends ApplicationEvent implements Serializable {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     private String msg;
@@ -23,7 +23,7 @@ public class TestEvent extends ApplicationEvent implements Serializable {
      * @param source The object on which the Event initially occurred.
      * @throws IllegalArgumentException if source is null.
      */
-    public TestEvent(Object source) {
+    public MsgAEvent(Object source) {
         super(source);
         msg = source.toString();
     }

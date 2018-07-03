@@ -6,6 +6,7 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 /**
  * @author xinyang.Mei
@@ -14,11 +15,12 @@ import org.slf4j.LoggerFactory;
  * @description Job 执行实例
  */
 @DisallowConcurrentExecution
+@Component
 public class ChangeStatusJob implements Job{
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     private String msg;
-    /**
+    /**``
      * 由调度器调用的方法
      * @param jobExecutionContext job上下文信息
      * @throws JobExecutionException
@@ -32,7 +34,13 @@ public class ChangeStatusJob implements Job{
 //        String msg = jobDataMap.getString("msg");
 //        Trigger trigger = jobExecutionContext.getTrigger();
 //        logger.info("结束{}>>>>quartz>>>TriggerName>>>>{}",this, ((JSONObject)JSON.toJSON(trigger)).getString("fullName"));
-        logger.info("#########msg{}", msg);
+        try {
+            Thread.sleep(12000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        logger.info("#########ChangeStatusJob  {}#########", msg);
+//        throw new RuntimeException("手动添加异常");
     }
 
     public void setMsg(String msg) {

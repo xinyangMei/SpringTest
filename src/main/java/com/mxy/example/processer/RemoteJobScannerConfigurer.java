@@ -2,15 +2,12 @@ package com.mxy.example.processer;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.util.StringUtils;
-
-import java.util.Set;
 
 /**
  * @author xinyang.Mei
@@ -33,7 +30,6 @@ public class RemoteJobScannerConfigurer implements BeanDefinitionRegistryPostPro
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry beanDefinitionRegistry) throws BeansException {
         JobClassPathClientScanner scanner = new JobClassPathClientScanner(beanDefinitionRegistry, this.applicationContext);
         scanner.setResourceLoader(this.applicationContext);
-        Set<BeanDefinition> candidateComponents = scanner.findCandidateComponents(this.basePackage);
         int scan = scanner.scan(StringUtils.tokenizeToStringArray(this.basePackage, ","));
     }
 

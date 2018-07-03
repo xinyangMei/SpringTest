@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 public class ShowTimeAspect {
     private long startTime;
 
-    @Pointcut("@annotation(com.spring.test.springdemo.animation.ShowTime)")
+    @Pointcut("@annotation(com.mxy.example.animation.ShowTime)")
     public void pointCut() {
     }
 

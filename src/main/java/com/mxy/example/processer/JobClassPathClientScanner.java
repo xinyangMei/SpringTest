@@ -1,6 +1,6 @@
 package com.mxy.example.processer;
 
-import com.spring.test.springdemo.animation.ShowTime;
+import com.mxy.example.animation.ShowTime;
 import org.springframework.beans.factory.config.BeanDefinitionHolder;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
